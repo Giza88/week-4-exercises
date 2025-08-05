@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5.html – Input Validation</title>
+</head>
+<body>
+  <h1>Validation Demo</h1>
+  <form>
+
+    <div>
+      <label for="shorttext">Text (3–10 chars):</label>
+      <input type="text" id="shorttext" name="shorttext"
+             minlength="3" maxlength="10"
+             placeholder="3 to 10 chars" required>
+    </div>
+
+    <div>
+      <label for="requiredField">Required Field:</label>
+      <input type="text" id="requiredField" name="requiredField" required>
+    </div>
+
+    <button type="submit">Validate</button>
+  </form>
+</body>
+</html>
+

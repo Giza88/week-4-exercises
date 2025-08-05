@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>7.html – Registration Form</title>
+  <style>
+    body { font-family: sans-serif; line-height: 1.5; max-width: 600px; margin: auto; }
+    fieldset { margin-bottom: 1.5rem; padding: 1rem; }
+    legend { font-weight: bold; }
+    label { display: block; margin: 0.5rem 0 0.2rem; }
+    input, select, textarea { width: 100%; padding: 0.4rem; }
+    .inline { display: inline-block; width: auto; margin-right: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>User Registration</h1>
+  <form action="https://requestbin.whapi.cloud/BIN_URL_HERE" method="POST" enctype="multipart/form-data">
+
+    <input type="hidden" name="sender" value="Stefan">
+
+    <fieldset>
+      <legend>Personal Info</legend>
+
+      <label for="fullname">Full Name *</label>
+      <input type="text" id="fullname" name="fullname" required minlength="3" maxlength="50">
+
+      <label for="dob">Date of Birth *</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label>Gender *</label>
+      <label class="inline"><input type="radio" name="gender" value="male" required> Male</label>
+      <label class="inline"><input type="radio" name="gender" value="female"> Female</label>
+      <label class="inline"><input type="radio" name="gender" value="other"> Other</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Account Details</legend>
+
+      <label for="username">Username *</label>
+      <input type="text" id="username" name="username"
+             required minlength="5" maxlength="15">
+
+      <label for="password">Password *</label>
+      <input type="password" id="password" name="password"
+             required minlength="8">
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone"
+             pattern="^\+?\d{7,15}$" placeholder="+123456789" title="7–15 digits">
+    </fieldset>
+
+    <fieldset>
+      <legend>Profile</legend>
+
+      <label for="profilePic">Profile Picture</label>
+      <input type="file" id="profilePic" name="profilePic" accept="image/*">
+
+      <label for="address">Address</label>
+      <textarea id="address" name="address" rows="3"></textarea>
+
+      <label for="contactMethod">Preferred Contact Method *</label>
+      <select id="contactMethod" name="contactMethod" required>
+        <option value="" disabled selected>Select one</option>
+        <option>Email</option>
+        <option>Phone</option>
+        <option>Mail</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>Agreements</legend>
+
+      <label class="inline">
+        <input type="checkbox" name="subscribe" value="yes"> Subscribe to Newsletter
+      </label>
+
+      <label>
+        <input type="checkbox" name="terms" value="yes" required> I accept Terms and Conditions *
+      </label>
+    </fieldset>
+
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>
